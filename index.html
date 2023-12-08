@@ -1,123 +1,1187 @@
-﻿<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <title>1v1.LOL | Building Simulator, Battle Royale & Shooting Game</title>
-	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US" dir="ltr" xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://ogp.me/ns#" data-color-mode="dark" class="user-logged-out dark-mode"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# game: http://ogp.me/ns/game#">
+        <meta charset="utf-8">
+    <meta name="ROBOTS" content="NOODP">
+    <meta name="ROBOTS" content="NOYDIR">
+        <meta name="verify-v1" content="TgxixMKtxcQ+9NUdD7grKbzw3tAl3iJWlTPSPKt9t0I=">
+    <meta name="p:domain_verify" content="314c7ba9469cc171a12a46b43e0e2aed">
+    <meta name="google-site-verification" content="n7BdKb0xn1E9tRJXvmMxE3Ynr-QajBOi1yA1srT4Nrc">
 
-	<!-- Add Firebase products that you want to use -->
-	<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-remote-config.js"></script>
-	
-	<script src="js/dependencyLoader.js?v=3"></script>
-    <script>
-
-      window.addEventListener("beforeunload", function (e) {
-        if (adsVisible || !window.gameLoaded || !lockedOccured)
-          return null;
-        var confirmationMessage = 'Are you sure you want to leave? ';
-        (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-        return confirmationMessage; //Gecko + Webkit, Safari, Chrome etc.
-      });
-      window.alert = function(e) {console.log(e)};
-    </script>
-    <link rel='shortcut icon' type="image/png" href="img/favicon.png?v3" />
-    
-	<link rel="alternate" href="index.html" hreflang="en">
-	<link rel="alternate" href="de" hreflang="de">
-	<link rel="alternate" href="it" hreflang="it">
-	<link rel="alternate" href="fr" hreflang="fr">
-	<link rel="alternate" href="es" hreflang="es">
-	<link rel="alternate" href="pt" hreflang="pt">
-	<link rel="alternate" href="pl" hreflang="pl">
-	<link rel="alternate" href="ja" hreflang="ja">
-	<link rel="alternate" href="ru" hreflang="ru">
-    <link rel="canonical" href="index.html" />
-    <meta property="og:title" content="1v1.LOL" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://1v1.lol/" />
-    <meta property="og:image" content="https://1v1.lol/splash.jpg" />
-    <meta property="og:description" content="Discover 1v1, the online building simulator & third person shooting game. Battle royale, build fight, box fight, zone wars and more game modes to enjoy!">
-    
-    <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description"
-      content="Discover 1v1, the online building simulator & third person shooting game. Battle royale, build fight, box fight, zone wars and more game modes to enjoy!">
-    <meta name="keywords" content="just,build,simulator,practice,free,online,battle,royale">
-    <script type="text/javascript" src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+          <meta name="apple-itunes-app" content="app-id=329218549">
+      
+              <meta name="description" content="Play chess online for free on Chess.com with over 150 million members from around the world. Have fun playing with friends or challenging the computer!">
+      
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   
-    <!-- ZONETAG - PLACE INTO HEAD SECTION OR RUN CODE AT STARTUP -->
+    <link rel="preconnect" href="//www.chess.com">
+  <link rel="preconnect" href="//images.chesscomfiles.com">
+
+    <link rel="dns-prefetch" href="//www.chess.com">
+  <link rel="dns-prefetch" href="//images.chesscomfiles.com">
+
+  
+    
+<link as="font" crossorigin="crossorigin" href="/bundles/web/fonts/chessglyph-v3/chessglyph-v3.ff9d64d4.woff2" rel="preload" type="font/woff2">
+
+<link as="font" crossorigin="crossorigin" href="/bundles/web/fonts/montserrat-700.2213e098.woff2" rel="preload" type="font/woff2">
+
+<link as="font" crossorigin="crossorigin" href="/bundles/web/fonts/montserrat-800.2d88ac8b.woff2" rel="preload" type="font/woff2">
+
+    
+  
+  
+<link rel="mask-icon" href="images/safari-pinned-tab.1bf62bbf.svg" color="#5D9948">
+
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.7aaa2d1f.png">
+
+<link rel="alternate icon" type="image/png" href="images/favicon-32x32.adae7142.png">
+
+<link rel="icon" href="images/favicon.5d6cb047.svg" type="image/svg+xml">
+
+    
+
+
+    
+  
+      
+  
+  
+      <link href="css/main.client.114915e4.css" type="text/css" rel="stylesheet">
+  
+  
+
+      
+  
+      
+  
+  
+      <link href="css/sprites.client.788232f3.css" type="text/css" rel="stylesheet">
+  
+  
+
+
+  
+    
+  
+      
+  
+      
+  
+  
+      <link data-href="/bundles/app/css/alerts.client.92ebf452.css" type="text/css" rel="stylesheet">
+  
+  
+
+
+
+<meta name="language-banner-styles" content="/bundles/app/css/language-banner.client.3d4eaf76.css">
+<meta name="language-banner-scripts" content="/bundles/app/js/language-banner.client.61bb395e.js">
+
+
+
+
+      
+  
+      
+  
+  
+      <link href="css/navigation.client.2737dab3.css" type="text/css" rel="stylesheet">
+  
+  
+
+
+
+  <link href="css/navigation-footer.client.e93a38f6.css" type="text/css" rel="stylesheet">
+
+        
+  
+      
+  
+  
+      <link href="css/cookie-consent-manager.client.c98dd0fd.css" type="text/css" rel="stylesheet">
+  
+  
+      
+
+      
+  
+      
+  
+  
+      <link href="css/content.client.eeff0f96.css" type="text/css" rel="stylesheet">
+  
+  
+
+      
+  
+      
+  
+  
+      <link href="css/layout.client.95dea78b.css" type="text/css" rel="stylesheet">
+  
+  
+
+
+      
+  
+      
+  
+  
+      <link href="css/index.client.3a5fa194.css" type="text/css" rel="stylesheet">
+  
+  
+
+  <link href="css/active-theme-css.css" type="text/css" rel="stylesheet" id="active-theme-variables">
+  <meta name="theme-color" content="#312E2B">
+
+      
+          
+  <title>Chess.com - Play Chess Online - Free Games</title>
+
+        
+            <meta property="og:title" content="Chess.com - Play Chess Online - Free Games">
+
+          <meta property="og:url" content="https://www.chess.com/">
+
+          <meta property="fb:app_id" content="2427617054">
+
+          <meta property="og:description" content="Play chess online for free on Chess.com with over 150 million members from around the world. Have fun playing with friends or challenging the computer!">
+
+          <meta property="og:type" content="website">
+
+          <meta property="og:image" content="images/share-home.a3e2cdbb.png">
+
+          <meta property="og:site_name" content="Chess.com">
+
+  
+    
+          <meta name="twitter:title" content="Chess.com - Play Chess Online - Free Games">
+
+          <meta name="twitter:card" content="summary_large_image">
+
+          <meta name="twitter:site" content="@chesscom">
+
+          <meta name="twitter:description" content="Play chess online for free on Chess.com with over 150 million members from around the world. Have fun playing with friends or challenging the computer!">
+
+          <meta name="twitter:image" content="https://www.chess.com/bundles/web/images/social/share-home.a3e2cdbb.png">
+
+  
+  
+        <link rel="alternate" href="https://www.chess.com/" hreflang="en"><link rel="alternate" href="https://www.chess.com/es" hreflang="es"><link rel="alternate" href="https://www.chess.com/fr" hreflang="fr"><link rel="alternate" href="https://www.chess.com/de" hreflang="de"><link rel="alternate" href="https://www.chess.com/pl" hreflang="pl"><link rel="alternate" href="https://www.chess.com/ru" hreflang="ru"><link rel="alternate" href="https://www.chess.com/sv" hreflang="sv"><link rel="alternate" href="https://www.chess.com/el" hreflang="el"><link rel="alternate" href="https://www.chess.com/pt" hreflang="pt"><link rel="alternate" href="https://www.chess.com/it" hreflang="it"><link rel="alternate" href="https://www.chess.com/zh" hreflang="zh"><link rel="alternate" href="https://www.chess.com/ja" hreflang="ja"><link rel="alternate" href="https://www.chess.com/ko" hreflang="ko"><link rel="alternate" href="https://www.chess.com/nl" hreflang="nl"><link rel="alternate" href="https://www.chess.com/hy" hreflang="hy"><link rel="alternate" href="https://www.chess.com/bg" hreflang="bg"><link rel="alternate" href="https://www.chess.com/hr" hreflang="hr"><link rel="alternate" href="https://www.chess.com/cs" hreflang="cs"><link rel="alternate" href="https://www.chess.com/da" hreflang="da"><link rel="alternate" href="https://www.chess.com/fi" hreflang="fi"><link rel="alternate" href="https://www.chess.com/hu" hreflang="hu"><link rel="alternate" href="https://www.chess.com/lt" hreflang="lt"><link rel="alternate" href="https://www.chess.com/no" hreflang="no"><link rel="alternate" href="https://www.chess.com/ro" hreflang="ro"><link rel="alternate" href="https://www.chess.com/sk" hreflang="sk"><link rel="alternate" href="https://www.chess.com/sl" hreflang="sl"><link rel="alternate" href="https://www.chess.com/tr" hreflang="tr"><link rel="alternate" href="https://www.chess.com/uk" hreflang="uk"><link rel="alternate" href="https://www.chess.com/af" hreflang="af"><link rel="alternate" href="https://www.chess.com/ar" hreflang="ar"><link rel="alternate" href="https://www.chess.com/az" hreflang="az"><link rel="alternate" href="https://www.chess.com/be" hreflang="be"><link rel="alternate" href="https://www.chess.com/bs" hreflang="bs"><link rel="alternate" href="https://www.chess.com/et" hreflang="et"><link rel="alternate" href="https://www.chess.com/fa" hreflang="fa"><link rel="alternate" href="https://www.chess.com/gl" hreflang="gl"><link rel="alternate" href="https://www.chess.com/he" hreflang="he"><link rel="alternate" href="https://www.chess.com/hi" hreflang="hi"><link rel="alternate" href="https://www.chess.com/id" hreflang="id"><link rel="alternate" href="https://www.chess.com/is" hreflang="is"><link rel="alternate" href="https://www.chess.com/ka" hreflang="ka"><link rel="alternate" href="https://www.chess.com/lv" hreflang="lv"><link rel="alternate" href="https://www.chess.com/ms" hreflang="ms"><link rel="alternate" href="https://www.chess.com/pt-BR" hreflang="pt-BR"><link rel="alternate" href="https://www.chess.com/sq" hreflang="sq"><link rel="alternate" href="https://www.chess.com/sr" hreflang="sr"><link rel="alternate" href="https://www.chess.com/vi" hreflang="vi"><link rel="alternate" href="https://www.chess.com/zh-HK" hreflang="zh-HK"><link rel="alternate" href="https://www.chess.com/zh-TW" hreflang="zh-TW"><link rel="alternate" href="https://www.chess.com/fil" hreflang="fil"><link rel="alternate" href="https://www.chess.com/nl-BE" hreflang="nl-BE"><link rel="alternate" href="https://www.chess.com/bn" hreflang="bn"><link rel="alternate" href="https://www.chess.com/tk" hreflang="tk"><link rel="alternate" href="https://www.chess.com/uz" hreflang="uz"><link rel="alternate" href="https://www.chess.com/ca" hreflang="ca"><link rel="alternate" href="https://www.chess.com/ur" hreflang="ur">  
+        <link rel="canonical" href="https://www.chess.com/">
+  
+    
+              
+    
+    <link rel="manifest" href="/manifest.json" crossorigin="use-credentials">
+
+      <script async="" src="js/gtm.js"></script><script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Chess",
+      "url": "https://www.chess.com/",
+      "sameAs": [
+        "https://www.facebook.com/chess",
+        "https://twitter.com/chesscom",
+        "https://www.youtube.com/user/wwwChesscom",
+        "https://www.twitch.tv/chess",
+        "https://www.instagram.com/wwwchesscom/",
+        "https://www.linkedin.com/company/chess.com",
+        "https://www.crunchbase.com/organization/chess-com",
+        "https://www.glassdoor.com/Overview/Working-at-Chess-com-EI_IE2241778.11,20.htm",
+        "https://www.tiktok.com/@chess"
+      ],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.chess.com/bundles/web/images/brand/chesscom_pawn.5dfdea51.png",
+        "width": "567",
+        "height": "567"
+      }
+    }
+  </script>
+
+              <style type="text/css">
+          .osano-cm-dialog--type_bar .osano-cm-button--type_save,
+          .osano-cm-dialog--type_bar .osano-cm-dialog__list {
+              display: none;
+          }
+      </style>
+    
+          <script src="js/osano.js"></script>
+      
+  
+        
+  
+        
 
       <script>
-          (function(zonefile) {
-              var y=window.location.href.split('#')[0].split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>1},0);y=(10+((y*7)%26)).toString(36)+y.toString(36);
-              var drutObj = window[y] = window[y] || {};
-              function failCpmstarAPI() { var failFn = function(o) { o && typeof(o) === "object" && o.fail && o.fail(); }; drutObj && Array.isArray(drutObj.cmd) && drutObj.cmd.forEach(failFn) && (drutObj.cmd.length = 0);  window.cpmstarAPI = window["_"+zonefile] = failFn; }
-              var rnd = Math.round(Math.random()*999999);
-              var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.onerror=failCpmstarAPI;
-              var proto = document.location.protocol;
-              var host = ( proto == "https:" || proto == "file:")?"https://server":"//cdn";
-              if(window.location.hash=="#cpmstarDev") host = "//dev.server";
-              if(window.location.hash=="#cpmstarStaging") host = "//staging.server";
-              s.src = host + ".cpmstar.com/cached/zonefiles/" + zonefile + ".js?rnd="+rnd;
-              var s2=document.getElementsByTagName('script')[0];
-              s2.parentNode.insertBefore(s, s2);
-              window.cpmstarAPI = function(o) { (drutObj.cmd = drutObj.cmd || []).push(o); }
-          }('372_49986_1v1'));
-          Object.defineProperty(window.performance.__proto__,"measures",Object.getOwnPropertyDescriptor(window.performance.__proto__,"now")),delete window.performance.__proto__.now,window.performance.__proto__.now={},Object.defineProperty(window.performance.__proto__,"now",{get:function(){return this.measures}}),Object.defineProperty(window.performance.__proto__,"now",{set:function(){Object.defineProperty(window.performance.__proto__,"now",{get:function(){return function(){return this.measures()/2}}})}});
-      </script>
-      
-      <!-- OneTrust Cookies Consent Notice start for 1v1.lol -->
-      <script type="text/javascript" src="https://cdn.cookielaw.org/consent/04f73bfc-c643-4620-9c4b-fb8d44e993a5-test/OtAutoBlock.js" ></script>
-      <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="04f73bfc-c643-4620-9c4b-fb8d44e993a5-test" ></script>
-      <script type="text/javascript">
-          function OptanonWrapper() { }
-      </script>
-      <!-- OneTrust Cookies Consent Notice end for 1v1.lol -->
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WQJVC73');</script>
+  
+    <script>
+      document.querySelector('meta[name="theme-color"]')
+        .setAttribute('content', getComputedStyle(document.documentElement).getPropertyValue('--theme-background-color') || '#312E2B');
+    </script>
+
+  
+  <script>
+window.chesscom = window.chesscom || {};
+
+
+  
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+window.chesscom.features = ['ads_aditude_integration', 'ads_custom_targeting', 'amplitude_domain_proxy', 'amplitude_send_events_on_page_exit', 'amplitude_landing_page_element_clicked', 'amplitude_onboarding_step_complete', 'analysis_show_moves_autoplay_toggle', 'analysis_wasm_torch', 'client_router_replace_hostname', 'client_user_play_streak', 'clubs_product_redesign', 'duolingo_amplitude_tracking', 'events_search_v2', 'gift_timeline_visual', 'hide_game_stats_accuracy', 'hide_verified_link', 'home_game_review_optimization', 'home_hide_activity_optimization', 'home_hide_awards_optimization', 'home_hide_clubs_and_club_events_optimization', 'home_hide_friends_optimization', 'home_hide_leagues_optimization', 'home_hide_stats_optimization', 'home_hide_streamers_optimization', 'home_hide_tournaments_optimization', 'home_play_vs_bot', 'home_re_add_old_features', 'home_re_add_quick_links', 'legal_changes_dec_2023_crypto', 'livechess_kill_engines', 'load_from_library_collections', 'marketing_banners', 'marketing_middleware_serverside_device_id_generation', 'move_event_search_building_to_backend', 'new_eco_data_webapp', 'new_gifting_experience', 'new_move_list_replace_hml', 'new_onboarding_flow', 'new_second_chance_note_waive_appeal', 'oauth_custom_registration', 'payments_paypal_resolve_currency_fix', 'payments_special_offer_discount', 'payments_premium_post_upgrade_modals', 'puzzle_battle_challenges_callback_reduction', 'refactored_vml_web_component', 'rewarded_video_aditude_renderer', 'rewarded_video_client_analysis', 'rewarded_video_client_lessons', 'rewarded_video_fix', 'rewarded_video_client_enabled', 'sanction_belarus_flag', 'sanction_russia_flag', 'settings_service_read', 'share_modal_dynboard_removal', 'share_modal_placeholder', 'stockfish_15_1', 'stockfish_16', 'update_puzzle_modal_puzzle_count', 'use_amplitude_8', 'use_fake_worker_stockfish', 'vue_3_confirm_popover_directive', 'vue_3_default_rating_option_infinity', 'vue_3_tooltip_directive', 'vue_3_v_model_migration_cc_checkbox', 'vue_3_v_model_migration_cc_radiobutton', 'vue_3_v_model_migration_v5_input', 'vue_3_v_model_migration_v5_select', 'vue_3_v_model_migration_v5_switch', 'web_chat_redesign', 'web_new_merch_url', 'web_duolingo_flair', 'chess_tv_stream_embed', 'toaster_center_live_club_challenges', 'settings_http_cache', 'toaster_center_mobile'];
+</script>
+
+      <script>
+  window.chesscom = window.chesscom || {};
+
+  // Before adding global experiments please check in #experiments_chat slack channel for the performance costs
+  
+  
+  
+      window.chesscom.experiments = {}
+  </script>
   </head>
-  <body>
-    <div class="ads">
-      <div class="ad-smallscreen">
-        <div class="ad ad-rectangle-bottom">
+
+
+  
+    
+  
+  
+
+
+
+<body class=" theme-background " onkeydown="if (event.keyCode === 9) this.classList.add('keyboard-navigation-in-use')" onmousedown="this.classList.remove('keyboard-navigation-in-use')">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQJVC73"height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <div class="base-layout">
+                                            <div class="base-sidebar">
+          
+  
+
+
+
+<div id="login-register-modal"></div>
+
+<div id="shareable-game-url-modal"></div>
+
+<div id="message-modal"></div>
+
+<div id="first-time-modal"></div>
+
+<div id="achievements-modal"></div>
+
+
+  <div id="offline-challenge-toaster" data-badge="challenges" data-badge-count="0"></div>
+
+  <div id="old-browser-modal"></div>
+
+
+
+<div id="sb" style="" class="nav-component guest" data-constant-message-unread-count-max="100" data-notifications-limit="200" data-route-login-and-go="https://www.chess.com/login_and_go" data-route-register="https://www.chess.com/register">
+    <div id="sb-cover" data-mobile-nav-toggle=""></div>
+
+    <div class="nav-action toggle close" data-mobile-nav-toggle="">
+    <span class="icon-font-chess x"></span>
+  </div>
+
+    <div data-nav-top="">
+    
+        <a aria-label="Chess.com - Play Chess Online" class="nav-link-component nav-link-main-design chess-logo-wrapper sprite chess-logo no-panel" data-nav-link="home" data-amplitude-nav-selection="home" href="https://www.chess.com/" target="_self">
+      <span class="nav-link-text mobile-only">Home</span>
+
+              
+                  <span class="navigation-badge-component" data-badge="alerts" data-badge-count="0"></span>
+                  </a>
+    
+    
+        <a class="nav-link-component nav-link-main-design nav-link-top-level sprite play-top" data-amplitude-nav-selection="play" data-nav-link="play" href="https://www.chess.com/play" target="_self">
+      <span class="nav-link-text">Play</span>
+              <span class="navigation-badge-component" data-badge="games" data-badge-count="0"></span>
+          </a>
+    
+        <div class="nav-panel-component" data-nav-panel="play"></div>
+    
+        <a class="nav-link-component nav-link-main-design nav-link-top-level sprite puzzles-top" data-amplitude-nav-selection="puzzles" data-nav-link="puzzles" href="https://www.chess.com/puzzles/rated" target="_self">
+      <span class="nav-link-text">Puzzles</span>
+    </a>
+    
+        <div class="nav-panel-component" data-nav-panel="puzzles"></div>
+    
+        <a class="nav-link-component nav-link-main-design nav-link-top-level sprite learn-top" data-amplitude-nav-selection="learn" data-nav-link="learn" href="https://www.chess.com/learn" target="_self">
+      <span class="nav-link-text">Learn</span>
+    </a>
+    
+        <div class="nav-panel-component" data-nav-panel="learn"></div>
+    
+        <a class="nav-link-component nav-link-main-design nav-link-top-level sprite watch-top" data-amplitude-nav-selection="watch" data-nav-link="watch" href="https://www.chess.com/watch" target="_self">
+      <span class="nav-link-text">Watch</span>
+    </a>
+    
+        <div class="nav-panel-component" data-nav-panel="watch"></div>
+    
+        <a class="nav-link-component nav-link-main-design nav-link-top-level sprite news-top" data-amplitude-nav-selection="news" data-nav-link="news" href="https://www.chess.com/today" target="_self">
+      <span class="nav-link-text">News</span>
+    </a>
+
+    <div class="nav-panel-component" data-nav-panel="news"></div>
+    
+        <a class="nav-link-component nav-link-main-design nav-link-top-level sprite social-page" data-amplitude-nav-selection="social" data-nav-link="social" href="https://www.chess.com/social" target="_self">
+      <span class="nav-link-text">Social</span>
+          </a>
+    
+    <div class="nav-panel-component" data-nav-panel="social"></div>
+
+          <button aria-label="More" class="nav-link-component nav-link-main-design nav-link-button nav-link-top-level sprite more-top" data-amplitude-nav-selection="more" goto="https://www.chess.com/more" data-nav-link="more">
+        <span class="nav-link-text">More</span>
+      </button>
+    
+    
+    <div class="nav-panel-component" data-nav-panel="more"></div>
+    
+    
+          <div class="nav-link-wrapper">
+                <a href="https://www.chess.com/search" target="_self" class="nav-link-component nav-link-main-design nav-link-top-level nav-search-icon" aria-label="Search" data-amplitude-nav-selection="subnav-search" data-nav-action-search="" data-nav-toggle-search-box="">
+          <div class="nav-toggle-search-box" id="search">
+            <span class="search-icon-font icon-font-chess magnifying-glass"></span>
+          </div>
+        </a>
+
+                <div class="nav-popover nav-search" data-nav-popover-search="">
+          <div class="arrow"></div>
+
+          <input class="ui_v5-input-component ui_v5-input-dark nav-autofill-search" type="text" placeholder="Search" autocomplete="off" readonly="readonly" data-autofocus="1">
+        </div>
+              </div>
+
+      <div class="nav-search-form">
+        <input class="ui_v5-input-component ui_v5-input-dark nav-autofill-search" type="text" placeholder="Search" autocomplete="off" readonly="readonly" data-force-theme="dark">
+      </div>
+    
+
+    
+              
+                  
+      <a id="menu-cta" data-amplitude-props="{" source":"unknown"}"="" href="https://www.chess.com/register?returnUrl=https://www.chess.com/" target="_self" rel="nofollow" class="button auth signup register ui_v5-button-component ui_v5-button-basic-dark ">
+        <span class="icon-font-chess icon user-plus"></span>
+
+        <span class="label">Sign Up</span>
+      </a>
+      
+            <a href="https://www.chess.com/login_and_go?returnUrl=https://www.chess.com/" target="_self" rel="nofollow" class="button auth login ui_v5-button-component ui_v5-button-primary ">
+        <span class="icon-font-chess icon enter"></span>
+
+        <span class="label">Log In</span>
+      </a>
+                </div>
+    <div class="nav-menu-area">
+              <button aria-label="Change language" class="nav-action language-select" type="button">
+        <span class="icon-font-chess nav-language-icon globe"></span>
+
+        <span class="nav-link-text nav-language-name">
+          English
+        </span>
+      </button>
+        
+            
+    
+            
+            
+            
+        <button type="button" aria-label="Help" class="nav-action has-popover help" data-amplitude-nav-selection="subnav-help">
+      <span class="icon-font-chess circle-question"></span>
+
+      <span class="nav-link-text">Help</span>
+    </button>
+    
+                <div class="nav-popover dark help">
+                <div class="arrow"></div>
+        
+                <button type="button" class="btn-link help-scout" data-amplitude-nav-selection="subnav-help-askaquestion">
+          <span class="icon-font-chess circle-question"></span>
+
+          <span class="title">Ask a Question</span>
+        </button>
+        
+                <a data-amplitude-nav-selection="subnav-help-reportabuse" class="btn-link" rel="noopener" href="https://support.chess.com/collection/136-community-safety" target="_blank">
+          <span class="icon-font-chess circle-block"></span>
+
+          <span class="title">Report Abuse</span>
+        </a>
+        
+                <button type="button" class="btn-link user-snap" data-amplitude-nav-selection="subnav-help-makeasuggestion">
+          <span class="icon-font-chess lightbulb"></span>
+
+          <span class="title">Make a Suggestion</span>
+        </button>
+        
+                <a data-amplitude-nav-selection="subnav-help-billingissues" class="btn-link" rel="noopener" href="https://support.chess.com/category/135-membership-and-billing" target="_blank">
+          <span class="icon-font-chess card"></span>
+
+          <span class="title">Billing Issues</span>
+        </a>
+        
+                <button type="button" class="btn-link user-snap" data-amplitude-nav-selection="subnav-help-reportabug">
+          <span class="icon-font-chess bug"></span>
+
+          <span class="title">Report a Bug</span>
+        </button>
+              </div>
+           </div>
+  </div>
+
+
+          </div>
+      
+            <div class="base-container">
+        <div id="scroll-top-anchor"></div>
+
+                          
+                          <div id="language-banner"></div>
+        
+                            <header id="tb" class="toolbar-new-wrapper ">
+    <div class="toolbar-menu-area toolbar-menu-area-left">
+        <div class="toolbar-action toggle open" data-mobile-nav-toggle="">
+      <span class="icon-font-chess menu toolbar-action-icon"></span>
+    </div>
+    
+        <a href="https://www.chess.com/" class="link chess-logo-wrapper sprite chess-logo" aria-label="Chess.com - Play Chess Online">
+    </a>
+      </div>
+  
+          <div class="toolbar-menu-area mobile-auth-actions  ">
+  <a class="mobile-auth-action ui_v5-button-component ui_v5-button-basic-dark ui_v5-button-x-small sign-up-eng" href="https://www.chess.com/register?returnUrl=https://www.chess.com/" rel="nofollow" title="Sign Up">
+    Sign Up
+  </a>
+
+  <a class="mobile-auth-action ui_v5-button-component ui_v5-button-primary ui_v5-button-x-small login" href="https://www.chess.com/login_and_go?returnUrl=https://www.chess.com/" rel="nofollow" title="Log In">
+    Log In
+  </a>
+</div>
+      </header>
+        
+                  
+  <main class="layout-component layout-single">
+    
+    <div class="layout-column-wide">
+        <div class="index-component">
+    <section class="index-guest-block">
+      <div class="index-board">
+        <form action="https://www.chess.com/guest/login" class="index-guest-button-form" method="post">
+          <input type="hidden" name="_token" value="4a92d56e6107.axW5gf7LVMm45VVdU-D5zyE61mYuv8Ex3n3kIEPF5x0.WErL16euNZDO1w0vGs2uvHVolDVh05RHkzLWYTqMnkkqXvzblaJjuYnRBA">
+
+          <button aria-label="Play Online" type="submit" class="index-guest-board-link">
+            <img alt="Board" class="index-board-img" width="496" height="496" src="images/standardboard.1d6f9426.png">
+          </button>
+        </form>
+      </div>
+
+      <div class="index-intro">
+        <h1 class="index-title">
+                      <span>Play Chess</span>
+            <span>Online</span>
+            <span>on the #1 Site!</span>
+                  </h1>
+
+        
+                  <div class="index-info">
+            <p class="index-info-item">
+              <span class="index-info-item-counter">
+                12,772,089
+              </span>
+
+              Games Today
+            </p>
+
+            <p class="index-info-item">
+              <span class="index-info-item-counter">
+                27,361
+              </span>
+
+              Playing Now
+            </p>
+          </div>
+        
+        <div class="index-guest-button-wrap">
+          <form action="https://www.chess.com/guest/login" class="index-guest-button-form" method="post">
+            <input type="hidden" name="_token" value="4b982a.xfni7v6qH6g1BFpC13JJGJS48fAy1EBocmSkJiYFhHc.9qaQuKfPfvFDNgIwnl8ea8Dqs6N9uBUePyuWZ19M_SOEsqe0lcMo2AQwCw">
+
+            <button type="submit" class="index-guest-button ui_v5-button-component ui_v5-button-large ui_v5-button-primary  ui_v5-button-full">
+              <div class="index-guest-button-icon index-playhand-icon"></div>
+
+              <div>
+                <div class="index-guest-button-title">Play Online</div>
+
+                <div class="index-guest-button-subtitle">Play with someone at your level</div>
+              </div>
+            </button>
+          </form>
+
+          <a href="https://www.chess.com/play/computer" class="index-guest-button ui_v5-button-component ui_v5-button-large ui_v5-button-basic ui_v5-button-full">
+            <div class="index-guest-button-icon index-computer-icon"></div>
+
+            <div>
+              <div class="index-guest-button-title">Play Computer</div>
+
+              <div class="index-guest-button-subtitle">Play vs customizable training bots</div>
+            </div>
+          </a>
         </div>
       </div>
-      <div class="ad ad-rectangle-upper" id="adRectangleUpper">
-        <script>
-          (function(w,pid){
-          var r=function(c,m){c=c.split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>m},0);return(10+((c*7)%26)).toString(36)+c.toString(36);},y=r(w.location.href.split('#')[0],1),c=r(w.location.href.split('#')[0]+pid,0);
-          w.document.write('<div style="width:300px;height:250px" class="'+c+'"></div>');
-          })(window,83023);
-        </script>
+    </section>
+
+    <section class="index-suggestion-component index-suggestion-hikaru">
+      <h2 class="index-suggestion-title">
+        Solve Chess Puzzles
+      </h2>
+
+      <div class="index-suggestion-board">
+        <a href="https://www.chess.com/puzzles/rated">
+          <img alt="Solve Chess Puzzles" class="index-suggestion-board-img" width="400" height="410" src="images/board-puzzles.4a54c49f.png" srcset="images/board-puzzles.4a54c49f%402x.png">
+        </a>
       </div>
-      <div class="ad-largescreen">
-        <div class="ad ad-leaderboard-bottom">
-        <script>
-          (function(w,pid){
-          var r=function(c,m){c=c.split('').reduce(function(a,b){return(a<<5)-a+b.charCodeAt(0)>>>m},0);return(10+((c*7)%26)).toString(36)+c.toString(36);},y=r(w.location.href.split('#')[0],1),c=r(w.location.href.split('#')[0]+pid,0);
-          w.document.write('<div style="width:300px;height:600px" class="'+c+'"></div>');
-          })(window,85420);
-        </script>
-        </div>
+
+      
+      <div class="index-quote">
+  <img alt="Hikaru Nakamura" class="index-quote-img img-defer" src="images/image-default.445cb543.svg" data-src="/bundles/web/images/faces/hikaru-nakamura.e1ca9267.jpg" width="148">
+
+  <blockquote class="index-quote-inner">
+    <p class="index-quote-body">
+      "Puzzles are the best way to improve pattern recognition, and no site does it better."
+    </p>
+
+    <div class="index-quote-author">
+              <div class="index-chess-title">GM</div>
+      
+      Hikaru Nakamura
+    </div>
+  </blockquote>
+</div>
+
+      <div class="index-suggestion-button-wrapper">
+        <a href="https://www.chess.com/puzzles/rated" class="ui_v5-button-large ui_v5-button-component ui_v5-button-primary">
+          <div class="index-button-title">
+            Solve Puzzles
+          </div>
+        </a>
       </div>
+    </section>
+
+        <section class="index-suggestion-component">
+      <h2 class="index-suggestion-title">
+        Take Chess Lessons
+      </h2>
+
+      <div class="index-suggestion-board">
+        <a href="https://www.chess.com/lessons">
+          <img alt="Take Chess Lessons" class="index-suggestion-board-img img-defer" width="400" height="400" src="images/image-default.445cb543.svg" data-src="/bundles/web/images/web/board-lessons.825946d3.png" data-srcset="/bundles/web/images/web/board-lessons.825946d3@2x.png">
+        </a>
+      </div>
+
+      
+      <div class="index-quote">
+  <img alt="Anna Rudolf" class="index-quote-img img-defer" src="images/image-default.445cb543.svg" data-src="/bundles/web/images/faces/anna-rudolf.193d08a5.jpg" width="148">
+
+  <blockquote class="index-quote-inner">
+    <p class="index-quote-body">
+      "Chess.com lessons make it easy to learn to play, then challenge you to continue growing."
+    </p>
+
+    <div class="index-quote-author">
+              <div class="index-chess-title">IM</div>
+      
+      Anna Rudolf
+    </div>
+  </blockquote>
+</div>
+
+      <div class="index-suggestion-button-wrapper">
+        <a class="ui_v5-button-large ui_v5-button-component ui_v5-button-primary" href="https://www.chess.com/lessons">
+          <div class="index-button-title">
+            Start Lessons
+          </div>
+        </a>
+      </div>
+    </section>
+
+        <section class="index-posts-component">
+      <h2 class="index-posts-title">
+        <a href="https://www.chess.com/today">
+          Follow what’s happening in Chess Today.
+        </a>
+      </h2>
+
+      <div class="index-posts-wrapper">
+        
+                    
+  
+  
+<a href="https://www.chess.com/news/view/carlsen-hits-highest-blitz-rating" class="index-post">
+  <div class="index-post-img">
+    
+              
+          <img alt="Carlsen Hits Highest Blitz Rating Ever On Chess.com" class="index-post-img-thumbnail img-defer " data-src="https://images.chesscomfiles.com/uploads/v1/news/1314739.3315d823.507x286o.5da7285a1afc.png" width="504" height="283" data-srcset="https://images.chesscomfiles.com/uploads/v1/news/1314739.3315d823.507x286o.5da7285a1afc@2x.png 2x" src="images/image-default.445cb543.svg">
+    
+      </div>
+
+  <h3 class="index-post-name">Carlsen Hits Highest Blitz Rating Ever On Chess.com</h3>
+
+  <div class="index-post-author">
+          <div class="index-chess-title">NM</div>
+    
+    AnthonyLevin
+  </div>
+</a>
+
+        
+        
+                          
+                    
+  
+  
+<a href="https://www.chess.com/news/view/london-chess-classic-2023-round-6" class="index-post">
+  <div class="index-post-img">
+    
+              
+          <img alt="Adams, Gukesh Benefit From Blunders; Volokitin Beats Niemann" class="index-post-img-thumbnail img-defer " data-src="https://images.chesscomfiles.com/uploads/v1/news/1314917.1fbe4dea.507x286o.100e13ef1261.png" width="504" height="283" data-srcset="https://images.chesscomfiles.com/uploads/v1/news/1314917.1fbe4dea.507x286o.100e13ef1261@2x.png 2x" src="images/image-default.445cb543.svg">
+    
+      </div>
+
+  <h3 class="index-post-name">Adams, Gukesh Benefit From Blunders; Volokitin Beats Niemann</h3>
+
+  <div class="index-post-author">
+    
+    Colin_McGourty
+  </div>
+</a>
+
+                    
+  
+  
+<a href="https://www.chess.com/article/view/chesscom-update-december-2023" class="index-post">
+  <div class="index-post-img">
+    
+              
+          <img alt="The Cheekiest Chess.com Update Of 2023" class="index-post-img-thumbnail img-defer " data-src="https://images.chesscomfiles.com/uploads/v1/article/30231.56871626.507x286o.e95058f4a3f0.png" width="504" height="283" data-srcset="https://images.chesscomfiles.com/uploads/v1/article/30231.56871626.507x286o.e95058f4a3f0@2x.png 2x" src="images/image-default.445cb543.svg">
+    
+      </div>
+
+  <h3 class="index-post-name">The Cheekiest Chess.com Update Of 2023</h3>
+
+  <div class="index-post-author">
+    
+    CHESScom
+  </div>
+</a>
+
+                    
+  
+  
+<a href="https://www.chess.com/video/player/coming-back-in-matches-2-how-a-prodigy-plays-chess" class="index-post">
+  <div class="index-post-img">
+    
+              
+          <img alt="Coming Back In Matches 2: How A Prodigy Plays Chess" class="index-post-img-thumbnail img-defer " data-src="https://images.chesscomfiles.com/uploads/v1/video/9749.fbb74b1a.507x286o.8a40bcd800a3.png" width="504" height="283" data-srcset="https://images.chesscomfiles.com/uploads/v1/video/9749.fbb74b1a.507x286o.8a40bcd800a3@2x.png 2x" src="images/image-default.445cb543.svg">
+    
+          <div class="post-preview-image-icon-wrapper">
+        <span class="icon-font-chess play post-preview-image-icon"></span>
+      </div>
+      </div>
+
+  <h3 class="index-post-name">Coming Back In Matches 2: How A Prodigy Plays Chess</h3>
+
+  <div class="index-post-author">
+          <div class="index-chess-title">GM</div>
+    
+    rpragchess
+  </div>
+</a>
+
+              </div>
+    </section>
+
+        <a class="ui_v5-button-large ui_v5-button-component ui_v5-button-primary index-today-button" href="https://www.chess.com/today">
+      <div class="index-button-title">
+        Chess Today
+      </div>
+    </a>
+  </div>
+    </div>
+  </main>
+
+                          
+<footer id="navigation-footer" class="navigation-footer-component navigation-footer-hide">
+  <div class="navigation-footer-pages-component navigation-footer-left">
+    <a href="https://support.chess.com" class="navigation-footer-page-component" target="_blank" rel="noopener">
+      Help
+    </a>
+
+          <a href="https://www.chess.com/terms" class="navigation-footer-page-component" target="_blank">
+        Chess Terms
+      </a>
+    
+    
+          <a href="https://www.chess.com/about" class="navigation-footer-page-component" target="_blank">
+        About
+      </a>
+    
+    <a href="https://www.chess.com/jobs" class="navigation-footer-page-component" target="_blank">
+      Jobs
+    </a>
+
+    <a href="https://www.chess.com/club/chess-com-developer-community" class="navigation-footer-page-component" target="_blank">
+      Developers
+    </a>
+
+    <a href="https://www.chess.com/legal/user-agreement" class="navigation-footer-page-component" target="_blank">
+      User Agreement
+    </a>
+
+    <a href="https://www.chess.com/legal/privacy" class="navigation-footer-page-component" target="_blank">
+      Privacy
+    </a>
+
+    <a href="https://www.chess.com/legal/fair-play" class="navigation-footer-page-component" target="_blank">
+      Fair Play
+    </a>
+
+    <a href="https://www.chess.com/legal/community" class="navigation-footer-page-component" target="_blank">
+      Community
+    </a>
+
+        <a href="https://www.chess.com/partners" class="navigation-footer-page-component" target="_blank">
+      Partners
+    </a>
+    
+    <a href="https://www.chess.com/legal/compliance" class="navigation-footer-page-component" target="_blank">
+      Compliance
+    </a>
+
+          <a href="https://www.chess.com/legal/privacy#cookie_preferences" id="cookie-consent-trigger" class="navigation-footer-page-component" target="_blank">
+        Cookies
+      </a>
+    
+    <a href="https://www.chess.com/" class="navigation-footer-page-component">
+      Chess.com © 2023
+    </a>
+  </div>
+
+  <div class="navigation-footer-platforms-component">
+    <a aria-label="App for iOS / iPhone / iPad" class="navigation-footer-platform-component navigation-footer-platforms-apple" href="https://www.chess.com/play/apps/ios">
+          
+  <span class="icon-font-chess navigation-footer-platform-icon apple"></span>
+
+    </a>
+
+    <a aria-label="App for Android" class="navigation-footer-platform-component navigation-footer-platforms-android navigation-footer-platforms-gutter" href="https://www.chess.com/play/apps/android">
+          
+  <span class="icon-font-chess navigation-footer-platform-icon android"></span>
+
+    </a>
+
+    <a aria-label="TikTok" class="navigation-footer-platform-component navigation-footer-platforms-tiktok" href="https://www.tiktok.com/@chess">
+          
+  <span class="icon-font-chess navigation-footer-platform-icon tiktok"></span>
+
+    </a>
+
+          <a aria-label="Twitter" class="navigation-footer-platform-component navigation-footer-platforms-twitter" href="https://twitter.com/chesscom">
+            
+  <span class="icon-font-chess navigation-footer-platform-icon twitter"></span>
+
+      </a>
+    
+    <a aria-label="Youtube" class="navigation-footer-platform-component navigation-footer-platforms-youtube" href="https://www.youtube.com/user/wwwChesscom">
+          
+  <span class="icon-font-chess navigation-footer-platform-icon youtube"></span>
+
+    </a>
+
+    <a aria-label="Twitch" class="navigation-footer-platform-component navigation-footer-platforms-twitch" href="https://www.twitch.tv/chess">
+          
+  <span class="icon-font-chess navigation-footer-platform-icon twitch"></span>
+
+    </a>
+
+    <a aria-label="Instagram" class="navigation-footer-platform-component navigation-footer-platforms-instagram" href="https://www.instagram.com/wwwchesscom">
+          
+  <span class="icon-font-chess navigation-footer-platform-icon instagram"></span>
+
+    </a>
+
+    <a aria-label="Discord" class="navigation-footer-platform-component navigation-footer-platforms-discord" href="https://discord.gg/3VbUQME">
+          
+  <span class="icon-font-chess navigation-footer-platform-icon discord"></span>
+
+    </a>
+
+      </div>
+</footer>
+              </div>
     </div>
   
-    <div id="interAdsContainer" style="display: none;"></div>
-    <canvas id="gameContainer"></canvas>
-    <div class="widget-example-element" id="widget-example-element" style="display: none"></div>
-    <div id="loader">
-      <img class="logo" src="img/logo.png">
-      <div class="spinner"></div>
-      <div class="progress">
-        <div class="full"></div>
+        <script>
+  window.PubSub = {};
+  window.PubSub.options = {
+    environment: 'prod',
+    url: {
+              base: 'https://www.chess.com',
+        baseWss: 'wss://www.chess.com',
+        chat: 'https://www.chess.com/service/chat/',
+        classroom: 'https://www.chess.com/service/classroom/',
+        insights: 'https://www.chess.com/service/insights/',
+        invitations: 'https://www.chess.com/service/invitations/',
+        matcher: 'https://www.chess.com/service/matcher/',
+        game: 'https://www.chess.com/service/play/',
+        play: 'https://www.chess.com/service/play/',
+        playerObserver: 'https://www.chess.com/service/player-observer/idl',
+        presence: 'https://www.chess.com/service/presence/',
+        pubsub: 'wss://www.chess.com/pubsub',
+        ratings: 'https://www.chess.com/service/ratings/',
+        reactions: 'https://www.chess.com/service/reactions/',
+        settings: 'https://www.chess.com/service/settings/',
+        topplayers: 'https://www.chess.com/service/topplayers/',
+        gamelist: 'https://www.chess.com/service/gamelist/',
+        userProperties: 'https://www.chess.com/service/user-properties',
+        users: '',
+          },
+      };
+</script>
+  
+        
+      
+                                                
+  <div id="widget-alert-flash" class="alerts-container">
       </div>
-    </div>
-	<script>
-	// var gameJsonUrl = "https://justbuild.nyc3.cdn.digitaloceanspaces.com/NewCI/1v1/Prod/11/3e3a3e7f9b174542bcfb0fd7615b7725/WebGL.json"; //%gameJsonUrl
-	// <script id="unity-loader" src="https://justbuild.nyc3.cdn.digitaloceanspaces.com/NewCI/1v1/Prod/11/3e3a3e7f9b174542bcfb0fd7615b7725/UnityLoader.js">
-	</script>
-	<div id="unity-loader-div"></div>
-  </body>
-</html>
+
+  
+    
+    
+
+  <script type="text/javascript">
+    var Config = {
+      "cometd.url": "/cometd",
+      "domain.main": "//www.chess.com",
+      "domain.static": "//www.chess.com",
+      "domain.files": "//files.chesscomfiles.com",
+      "domain.live": "//live.chess.com",
+      "domain.live2": "//live2.chess.com",
+      "domain.live3": "//live3.chess.com",
+      "domain.voice": "rtmp://voice.chess.com",
+      "domain.cssjs": "//www.chess.com",
+      "domain.images": "//images.chesscomfiles.com",
+      "domain.avatars": "//avatars.chesscomfiles.com",
+      "domain.baseUrl": "",
+      "isFacebookCanvas": false,
+      "facebookId": "2427617054",
+      "pathToEngineWorker": "/bundles/app/js/vendor/jschessengine/stockfish.6983901b.js",
+      "pathToEngineWorkerAlt": "/bundles/app/js/engine/stockfish.1de0d633.js",
+      "pathToWasmEngine": "/bundles/app/js/vendor/jschessengine/stockfish.6103b42f.bin",
+      "pathToNonWasmEngine": "/bundles/app/js/vendor/jschessengine/stockfish.asm.1abfa10c.js",
+      "pathToKomodoWorker": "/bundles/app/js/vendor/jschessengine/komodo.9ea31da2.js",
+      "pathToWasmKomodo": "/bundles/app/js/vendor/jschessengine/komodo.765d36d5.bin",
+      "pathToNonWasmKomodo": "/bundles/app/js/vendor/jschessengine/komodo.asm.b6f18c99.js",
+      "pathToTorchWorker": "/bundles/app/js/engine/torch.ff2549db.js",
+      "pathToWasmTorch": "/bundles/app/js/engine/torch.94440d8f.wasm",
+      "pathToTorchLiteWorker": "/bundles/app/js/engine/torch-lite.81c1f5f5.js",
+      "pathToWasmTorchLite": "/bundles/app/js/engine/torch-lite.43dcd446.wasm",
+      "pathToExplanationEngineWorker": "/bundles/app/js/vendor/explanation-engine-beta/explanation-engine.3cd949c6.js",
+      "pathToWasmExplanationEngine": "/bundles/app/js/vendor/explanation-engine-beta/explanation-engine.6e4a3c35.wasm",
+      "pathToExplanationEngineWorkerPD": "/bundles/app/js/vendor/explanation-engine-pd/explanation-engine.8b6c0a0d.js",
+      "pathToExplanationEnginePD": "/bundles/app/js/vendor/explanation-engine-pd/explanation-engine.fccda880.wasm",
+      "pathToEcoJson": "/bundles/app/js/engine/books/eco.c7fa19b9.json",
+      "pathToBook": "/bundles/app/js/engine/books/eco.c7fa19b9.json",
+      "pathToBookSmall": "/bundles/app/js/engine/books/eco.c7fa19b9.json",
+      "pathToWebGL": "/bundles/app/js/vendor/webgl_three.61269fce.js",
+      "pathToGamePreviewLoader": "/bundles/web/images/game-preview-loading.8677fb94.png",
+      "pathToPersonalityBooks": {
+                        "aggressive": "/bundles/app/js/engine/books/aggressive.847574a7.bin",
+                  "akiba_rubinstein": "/bundles/app/js/engine/books/akiba_rubinstein.27a1ba7f.bin",
+                  "alekhine": "/bundles/app/js/engine/books/alekhine.78afc9d2.bin",
+                  "alexandra_botez": "/bundles/app/js/engine/books/alexandra_botez.d64a85b6.bin",
+                  "alexandra_kosteniuk": "/bundles/app/js/engine/books/alexandra_kosteniuk.bfba3aea.bin",
+                  "aman_hambleton": "/bundles/app/js/engine/books/aman_hambleton.7df58084.bin",
+                  "andrea_botez": "/bundles/app/js/engine/books/andrea_botez.53326027.bin",
+                  "anish_giri": "/bundles/app/js/engine/books/anish_giri.8726a67e.bin",
+                  "anna_cramling": "/bundles/app/js/engine/books/anna_cramling.b6b03794.bin",
+                  "anna_muzychuk": "/bundles/app/js/engine/books/anna_muzychuk.2785d5ad.bin",
+                  "anna_rudolf": "/bundles/app/js/engine/books/anna_rudolf.c7ed14ff.bin",
+                  "anthony_levin": "/bundles/app/js/engine/books/anthony_levin.33851150.bin",
+                  "anthony_miles": "/bundles/app/js/engine/books/anthony_miles.96ba89dd.bin",
+                  "aron_nimzowitsch": "/bundles/app/js/engine/books/aron_nimzowitsch.e8a3a75c.bin",
+                  "avigail_rosenthal": "/bundles/app/js/engine/books/avigail_rosenthal.c28f3796.bin",
+                  "balanced": "/bundles/app/js/engine/books/balanced.4a60c3bd.bin",
+                  "beginner": "/bundles/app/js/engine/books/beginner.0cfbbbb3.bin",
+                  "benjamin_bok": "/bundles/app/js/engine/books/benjamin_bok.858af1a3.bin",
+                  "bent_larsen": "/bundles/app/js/engine/books/bent_larsen.f0a04521.bin",
+                  "bikfoot_wouter": "/bundles/app/js/engine/books/bikfoot_wouter.deb83ec3.bin",
+                  "book": "/bundles/app/js/engine/books/book.28504e3b.bin",
+                  "botvinnik": "/bundles/app/js/engine/books/botvinnik.8aa707d1.bin",
+                  "capablanca": "/bundles/app/js/engine/books/capablanca.7b15e717.bin",
+                  "carlsen": "/bundles/app/js/engine/books/carlsen.35b9ca73.bin",
+                  "cccopenings": "/bundles/app/js/engine/books/cccopenings.bdfbf7b7.bin",
+                  "christian_pulisic": "/bundles/app/js/engine/books/christian_pulisic.2b04f5d9.bin",
+                  "classical": "/bundles/app/js/engine/books/classical.fabd171a.bin",
+                  "dan_rozovsky": "/bundles/app/js/engine/books/dan_rozovsky.812207a0.bin",
+                  "daniel_naroditsky": "/bundles/app/js/engine/books/daniel_naroditsky.ec6d2390.bin",
+                  "daryl_morey": "/bundles/app/js/engine/books/daryl_morey.09d12a5e.bin",
+                  "dawid_czerw": "/bundles/app/js/engine/books/dawid_czerw.c80432c7.bin",
+                  "ding": "/bundles/app/js/engine/books/ding.98c63895.bin",
+                  "dodge_coates": "/bundles/app/js/engine/books/dodge_coates.7d0ade1b.bin",
+                  "dylan_rittman": "/bundles/app/js/engine/books/dylan_rittman.7bdc1497.bin",
+                  "eric_hansen": "/bundles/app/js/engine/books/eric_hansen.d890b525.bin",
+                  "erik_allebest": "/bundles/app/js/engine/books/erik_allebest.2dfb86d6.bin",
+                  "ethan_metzger": "/bundles/app/js/engine/books/ethan_metzger.549af14c.bin",
+                  "euwe": "/bundles/app/js/engine/books/euwe.fbc309c1.bin",
+                  "f-pawner": "/bundles/app/js/engine/books/f-pawner.bb8a15f1.bin",
+                  "fabiano_caruana": "/bundles/app/js/engine/books/fabiano_caruana.5642aaea.bin",
+                  "fischer": "/bundles/app/js/engine/books/fischer.c93e412d.bin",
+                  "gambit": "/bundles/app/js/engine/books/gambit.3ef59ed2.bin",
+                  "hou_yifan": "/bundles/app/js/engine/books/hou_yifan.62489211.bin",
+                  "ian_nepomniachtchi": "/bundles/app/js/engine/books/ian_nepomniachtchi.387e0d9f.bin",
+                  "indian": "/bundles/app/js/engine/books/indian.07a754a0.bin",
+                  "irina_krush": "/bundles/app/js/engine/books/irina_krush.b0af3f1a.bin",
+                  "james_canty": "/bundles/app/js/engine/books/james_canty.63b14dec.bin",
+                  "jeremy_kane": "/bundles/app/js/engine/books/jeremy_kane.75aeaa92.bin",
+                  "jonathan_cannon": "/bundles/app/js/engine/books/jonathan_cannon.232d257c.bin",
+                  "joseph_votto": "/bundles/app/js/engine/books/joseph_votto.c5c5711b.bin",
+                  "judit_polgar": "/bundles/app/js/engine/books/judit_polgar.867b5694.bin",
+                  "karpov": "/bundles/app/js/engine/books/karpov.f77e030c.bin",
+                  "kasparov": "/bundles/app/js/engine/books/kasparov.fbd33443.bin",
+                  "kassa_korley": "/bundles/app/js/engine/books/kassa_korley.b64ed838.bin",
+                  "kenneth_wilber": "/bundles/app/js/engine/books/kenneth_wilber.185811d9.bin",
+                  "kevin_bordi": "/bundles/app/js/engine/books/kevin_bordi.9cd76731.bin",
+                  "komodo": "/bundles/app/js/engine/books/komodo.bb8b6a25.bin",
+                  "korchnoi": "/bundles/app/js/engine/books/korchnoi.df9a9ce8.bin",
+                  "krikor_mekhitarian": "/bundles/app/js/engine/books/krikor_mekhitarian.43b3d4cd.bin",
+                  "lasker": "/bundles/app/js/engine/books/lasker.9d8fc690.bin",
+                  "leo_stokes": "/bundles/app/js/engine/books/leo_stokes.778f6211.bin",
+                  "levon_aronian": "/bundles/app/js/engine/books/levon_aronian.adcd3c3b.bin",
+                  "levy_rozman": "/bundles/app/js/engine/books/levy_rozman.024e3929.bin",
+                  "luis_fernandez_siles": "/bundles/app/js/engine/books/luis_fernandez_siles.12a08971.bin",
+                  "martin_enev": "/bundles/app/js/engine/books/martin_enev.49fb8880.bin",
+                  "matt_turner": "/bundles/app/js/engine/books/matt_turner.ccdc19ad.bin",
+                  "maurice_ashley": "/bundles/app/js/engine/books/maurice_ashley.fb4474e5.bin",
+                  "mike_klein": "/bundles/app/js/engine/books/mike_klein.e7c0d12f.bin",
+                  "nakamura": "/bundles/app/js/engine/books/nakamura.1b408716.bin",
+                  "naycir_gurpinar": "/bundles/app/js/engine/books/naycir_gurpinar.017ff300.bin",
+                  "offbeat": "/bundles/app/js/engine/books/offbeat.c125e5bf.bin",
+                  "paul_morphy": "/bundles/app/js/engine/books/paul_morphy.2a75be3d.bin",
+                  "petrosian": "/bundles/app/js/engine/books/petrosian.1488f78a.bin",
+                  "phiona_mutesi": "/bundles/app/js/engine/books/phiona_mutesi.03673f43.bin",
+                  "positional": "/bundles/app/js/engine/books/positional.a1fac9f6.bin",
+                  "qiyu_zhou": "/bundles/app/js/engine/books/qiyu_zhou.e1e573ce.bin",
+                  "quick_queen": "/bundles/app/js/engine/books/quick_queen.2ec5181f.bin",
+                  "rensch": "/bundles/app/js/engine/books/rensch.f0d14299.bin",
+                  "reuben_fine": "/bundles/app/js/engine/books/reuben_fine.60466cdf.bin",
+                  "richard_rapport": "/bundles/app/js/engine/books/richard_rapport.32ab0f3c.bin",
+                  "robert_hess": "/bundles/app/js/engine/books/robert_hess.38e30a88.bin",
+                  "rory_smith": "/bundles/app/js/engine/books/rory_smith.5b603a9f.bin",
+                  "sam_copeland": "/bundles/app/js/engine/books/sam_copeland.8c022b9c.bin",
+                  "samay_raina": "/bundles/app/js/engine/books/samay_raina.0c633f9e.bin",
+                  "samuel_reshevsky": "/bundles/app/js/engine/books/samuel_reshevsky.d3d98935.bin",
+                  "savielly_tartakower": "/bundles/app/js/engine/books/savielly_tartakower.d2de6a1a.bin",
+                  "smyslov": "/bundles/app/js/engine/books/smyslov.e2ffdf87.bin",
+                  "spassky": "/bundles/app/js/engine/books/spassky.f1f87ea0.bin",
+                  "steinitz": "/bundles/app/js/engine/books/steinitz.875bb2f4.bin",
+                  "tagir_nafikov": "/bundles/app/js/engine/books/tagir_nafikov.0e71ab52.bin",
+                  "tal": "/bundles/app/js/engine/books/tal.0a811e26.bin",
+                  "ulf_andersson": "/bundles/app/js/engine/books/ulf_andersson.8b253379.bin",
+                  "vidit_gujrathi": "/bundles/app/js/engine/books/vidit_gujrathi.2f1e8a95.bin",
+                  "vishy_anand": "/bundles/app/js/engine/books/vishy_anand.3c6cff4e.bin",
+                  "vladimir_kramnik": "/bundles/app/js/engine/books/vladimir_kramnik.0c154e06.bin",
+                  "wesley_so": "/bundles/app/js/engine/books/wesley_so.f8b28796.bin",
+                  "will_stewart": "/bundles/app/js/engine/books/will_stewart.6bde6337.bin",
+                  "winger": "/bundles/app/js/engine/books/winger.77d88765.bin",
+                    },
+      "threadedEnginePaths": {
+        "stockfish": {
+          "fakeWorker": {
+            "loader": "/bundles/app/js/engine/stockfish-nnue-16-no-Worker.1ed4c83b.js",
+            "engine": "/bundles/app/js/engine/stockfish-nnue-16-no-Worker.22822879.wasm",
+          },
+          "multiThreaded": {
+            "loader": "/bundles/app/js/engine/stockfish-nnue-16.840e654f.js",
+            "engine": "/bundles/app/js/engine/stockfish-nnue-16.9ffe613d.wasm",
+            "nnue": "/bundles/app/js/engine/nn-5af11540bbfe.17051dfd.nnue",
+          },
+          "multiThreadedNoSIMD": {
+            "loader": "/bundles/app/js/engine/stockfish-nnue-16-no-simd.eeddca83.js",
+            "engine": "/bundles/app/js/engine/stockfish-nnue-16-no-simd.86f5189e.wasm",
+          },
+          "singleThreaded": {
+            "loader": "/bundles/app/js/engine/stockfish-single.830cf9cc.js",
+            "engine": "/bundles/app/js/engine/stockfish-single.8ffa2b70.wasm",
+          },
+          "asm": "/bundles/app/js/engine/stockfish.asm.16fa8540.js",
+          "fakeWorkerBrowserVersions": [{"browser":"chrome","version":109}],
+          "nnue": "/bundles/app/js/engine/nn-5af11540bbfe.17051dfd.nnue",
+        },
+      },
+      "oldThemes": false,
+      "isPlay": false,
+      "isStaff": false,
+      "noAvatar": '/bundles/web/images/user-image.007dad08.svg',
+      "wdlJsonModel": '/bundles/web/wdl/model.json',
+      "wdlWeights": '/bundles/web/wdl/group1-shard1of1.bin',
+      "ad.hideAds": true,
+      "ad.disabledAds": []
+    };
+
+    Config.adCustomPath = '';
+
+    Config.pathToTinyMCE = "/bundles/app/js/tinymce-lazy.client.c2ec7281.js",
+
+    
+    
+          Config.pathToDiagramViewerCSS =  "/bundles/app/css/diagram-viewer.client.d29f3b3a.css",
+      Config.pathToDiagramViewerJS = "/bundles/app/js/diagram-viewer.client.cfda8eb1.js",
+    
+        window.__CHESSCOM_RTL__ = false;
+
+        window.chesscom = window.chesscom || {};
+    window.chesscom.clientMetricsDomain = 'https://client-metrics-cf.chess.com';
+
+        window.chesscom.showAds = Boolean(1);
+
+        //<![CDATA[
+    context = {"freeTrial":null,"activeMembership":null,"i18n":{"locale":"en_US","contentLanguage":"any","mobile":[]},"csrf":{"token":"104066286b10f71fd6d9b6d595.-QittUoPGh6GApo-kI9lzaPgDkM3Tj5wWkYkKGnwFwc.ylff4xNqe0fwMMJM2aIyvveyTBB4ImsGFwkWaRC5blO4Q-jvIWYtbrc2yw","login":"f8bf7cb01d7d819f9b8.kgSdlu2liShVHoqUODqaxDCoa_ACXXj3e08l62S_07E.3EPa_dnQpBolavLFUQmvon3-CYlENRfaLHoWiSj9utLEbqzHq5DjHBZVzw","logout":"4e38c971b5d6eca69b8aa2.tSQ8S5W0it_IQFtBqrIwubGKTQtgsM_uC-VqfOfO8rQ.4l1qZsTtw7LlAyhs29Bcw5zwHngB6vuZWN07MdSNqo2BFWw-osP-8vgHCg"},"amplitudeKey":"5cc41a1e56d0ee35d4c85d1d4225d2d1","iterableKey":"f771b86cf083441f992a4bb01d3d600f","adyen":{"environment":"live","integrity":"sha384-O0Q35c47I1ojd1zrD78yWAs+r5gytAjBC\/sxwZqgQW5z9hDbAFM49z8SViprrDwm","clientKey":"live_7STEYX735RGTTEZMSKIVNX5C2YU2QN5B","key":"10001|D97C83A6DB30A889AAC517489C56512C733B365B8E5E2E5CB5FD860751EC3EC14A145FE6FD2EF1A338D375DB3D9F7B988631B64D4B9C9BE3DE007D8C60649F2BAC7B0798A869892B683110B2FE53E89EBB9923A0EF7113FDEEEBC57FDB21AA8F99D3757DB7C8A8E6458D3B628B357396E77CD3C31158B203BEDAF3AC56E11A94C3BA745CAE7847B6C7D5C6B1D6E68204147A9B98EC334560F94A484FC5335F8AA4716BF13E0153B9B0E7FF75384449563F935AF0173C5F8F1CBE20B1C91593C2F7AF07A83E48F31DA8F4F5959687A682823216342C6E1B36771AC42C9BF0E03F443D07D239F25EB916BC15A908796C698D296130A9BA4A925684416F9C759143","merchant":"ChesscomCOM","originKey":"pub.v2.1114841580210853.aHR0cHM6Ly93d3cuY2hlc3MuY29t.g3hcnpsxbNsbEo3XJP_laQJwLDCkoYfA1YmHG6Kns8g","sdk":"https:\/\/checkoutshopper-live.adyen.com\/checkoutshopper\/sdk\/5.23.1\/adyen.js"},"iterableMuteApiCallsFeature":false,"paypalClientId":"AX68j9lUfn3i3vsUPLiDT-jSr3n_1h0nbZtUSRPXXy3-O6iMSX-adfP6PB0qcTbNbbqCaHm6MiDy4JzE"};
+    //]]>
+    
+    context.version = '20231207133502';
+    context.branch = 'master';
+    context.commit = '6e746698331cfdd55ba123a65572b1342fa6b54c';
+    context.requestId = '1c83a910426ce6948d75b5b3537a550e';
+    context.server = 'web151.chess.com';
+    context.locale = 'en';
+    context.environment = 'prod';
+    context.cookies = {
+      app: '',
+    };
+
+    context.ip = '194.87.31.243';
+    context.chessboardBeta = false;
+    context.route = 'web_index';
+  </script>
+
+    <script language="javascript">
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(registration => {
+          if (registration.active.scriptURL.includes('/service-worker.client.js')) {
+            registration.unregister();
+          }
+        });
+      }).catch(() => { });
+    }
+  </script>
+
+
+<script defer="" src="js/es6-translation.en_US.4475215e.js"></script>
+
+<script src="js/vue.dll.e51bea19.js"></script>
+
+
+      
+      
+  
+      <script defer="" src="js/global.client.f7aeb58b.js">
+    </script>
+  
+  
+
+
+      
+      
+  
+      <script defer="" data-src="/bundles/app/js/language-banner-loader.client.39068ddc.js">
+    </script>
+  
+  
+
+
+
+
+  
+      <script>
+      window.chesscom = window.chesscom || {};
+      window.chesscom.enableSentry = false;
+      window.chesscom.enableSentryHP = true;
+      window.chesscom.sentry = {
+        appCookie: '',
+        incrementCallback: 'https://www.chess.com/metrics/fe_sentry',
+        key: '',
+      }
+    </script>
+
+        
+      
+  
+      <script defer="" src="js/sentry.client.d300ad89.js">
+    </script>
+  
+  
+  
+  
+  
+
+
+      
+      
+  
+      <script defer="" data-src="/bundles/app/js/client-metrics.client.f91f08c0.js">
+    </script>
+  
+  
+    
+      
+      
+  
+      <script defer="" src="js/index.client.0ba53897.js">
+    </script>
+  
+  
+
+            
+    
+      
+  
+      <script defer="" src="js/navigation.client.70571917.js">
+    </script>
+  
+  
+  
+    
+  
+  <div id="checkmate"></div> 
+      <div id="toaster-center"></div>
+  
+      <div id="subscription-status-modal"></div>
+    <div id="tenure-based-offer-modal"></div>
+  
+      <div id="league-promotion-modal"></div>
+    <div id="leagues-division-started-modal"></div>
+    <div id="league-promotion-share-modal"></div>
+  
+        <div id="board-popover"></div>
+    <div id="confirm-popover"></div>
+    <div id="confirm-popover-inline"></div>
+    <div id="form-datepicker"></div>
+    <div id="language-picker-modal"></div>
+    <div id="message-popover"></div>
+    <div id="modal-video"></div>
+    <div id="trophy-popover"></div>
+    <div id="user-popover"></div>
+    
+      
+      
+      
+  <div id="guest-modal"></div>
+  <div id="report-modal"></div>
+
+    
+    
+
+</body></html>
